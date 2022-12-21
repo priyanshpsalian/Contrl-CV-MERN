@@ -6,7 +6,9 @@ import { setAlert } from './alert';
 // Get user dumps
 export const getDumps = () => async (dispatch) => {
     try {
-        const res = await axios.get('/api/');
+        const res = await axios.get(
+          "https://contrl-cv.onrender.com/api/"
+        );
 
         dispatch({
             type: GET_DUMPS,
@@ -29,7 +31,11 @@ export const createDump = (formData) => async (dispatch) => {
     };
 
     try {
-        const res = await axios.post('/api/', formData, config);
+        const res = await axios.post(
+          "https://contrl-cv.onrender.com/api/",
+          formData,
+          config
+        );
 
         dispatch({
             type: CREATE_DUMP,
@@ -54,7 +60,9 @@ export const createDump = (formData) => async (dispatch) => {
 // Get dump by slug
 export const getDump = (slug) => async (dispatch) => {
     try {
-        const res = await axios.get(`/api/${slug}`);
+        const res = await axios.get(
+          `https://contrl-cv.onrender.com/api/${slug}`
+        );
 
         dispatch({
             type: GET_DUMP,
