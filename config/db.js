@@ -8,6 +8,7 @@ require("dotenv").config();
 db = config.get("MONGODB_URI");
 const connectDB = async () => {
   try {
+    await mongoose.set("strictQuery", false);
     await mongoose.connect(db, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
