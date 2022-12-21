@@ -1,4 +1,4 @@
-# Contrl CV
+<!-- # Contrl CV
 
 [![GitHub license](https://img.shields.io/github/license/priyanshpsalian/paste-library-mern?style=flat-square)](https://github.com/priyanshpsalian/paste-library-mern) ![project status](https://img.shields.io/badge/project%20status-inactive-yellowgreen?style=flat-square&logo=) [![Website](https://img.shields.io/website?label=web%20app&style=flat-square&url=https%3A%2F%2Fcontrlcv.tk)](https://contrlcv.tk)
 
@@ -128,4 +128,4 @@ This web-application is deployed using [Heroku](https://heroku.com) under the do
 
 # License
 
-This web-application is licensed under MIT. For more info refer to [LICENSE](LICENSE) file in the root directory.
+This web-application is licensed under MIT. For more info refer to [LICENSE](LICENSE) file in the root directory. -->
