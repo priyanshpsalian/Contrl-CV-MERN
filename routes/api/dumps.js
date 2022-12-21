@@ -65,7 +65,7 @@ router.post('/', [ optToken, [ check('text', 'Text is required').not().isEmpty()
             newDump.user = req.user.id;
         } else {
             // console.log("id default");
-            newDump.user = process.env.DEFAULT_USER_ID;
+            newDump.user = "63a2a491de7c4abb546e6da4";
         }
         // console.log("non");
         const dump = await newDump.save();
