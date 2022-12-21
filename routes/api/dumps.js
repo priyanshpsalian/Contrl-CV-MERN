@@ -13,6 +13,7 @@ const router = express.Router();
 // @desc    Create new paste dump
 // @access  Public
 router.post('/', [ optToken, [ check('text', 'Text is required').not().isEmpty() ] ], async (req, res) => {
+    // console.log("post");
     const errors = validationResult(req);
 
     if (!errors.isEmpty()) {
@@ -60,14 +61,17 @@ router.post('/', [ optToken, [ check('text', 'Text is required').not().isEmpty()
         if (title) newDump.slug = title;
         // adding user if logged in else anonymous user
         if (req.user) {
+            // console.log("id");
             newDump.user = req.user.id;
         } else {
+            // console.log("id default");
             newDump.user = process.env.DEFAULT_USER_ID;
         }
+        // console.log("non");
         const dump = await newDump.save();
         return res.json(dump);
     } catch (err) {
-        console.error(err.message);
+        // console.error(err.message);
         return res.status(500).json({ errors: [ { msg: 'Server Error' } ] });
     }
 });
@@ -78,7 +82,7 @@ router.post('/', [ optToken, [ check('text', 'Text is required').not().isEmpty()
 router.get('/:slug', optToken, async (req, res) => {
     try {
         const dump = await Dump.findOne({ slug: req.params.slug }).populate('user', [ 'id', 'username' ]);
-        // console.log("kk");
+        console.log("kk");
         if (!dump) {
             return res.status(404).json({ errors: [ { msg: 'Dump not fund' } ] });
         }
@@ -101,6 +105,7 @@ router.get('/:slug', optToken, async (req, res) => {
 
         return res.json(dump);
     } catch (err) {
+        
         console.error(err.message);
         return res.status(500).json({ msg: 'Server Error' });
     }

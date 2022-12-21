@@ -7,7 +7,7 @@ import { setAlert } from './alert';
 export const getDumps = () => async (dispatch) => {
     try {
         const res = await axios.get(
-          "https://contrl-cv.onrender.com/api/"
+          "/api/"
         );
 
         dispatch({
@@ -32,7 +32,7 @@ export const createDump = (formData) => async (dispatch) => {
 
     try {
         const res = await axios.post(
-          "https://contrl-cv.onrender.com/api/",
+          "/api/",
           formData,
           config
         );
@@ -60,15 +60,17 @@ export const createDump = (formData) => async (dispatch) => {
 // Get dump by slug
 export const getDump = (slug) => async (dispatch) => {
     try {
+        // console.log("fet dump");
         const res = await axios.get(
-          `https://contrl-cv.onrender.com/api/${slug}`
+          `/api/${slug}`
         );
-
+        // console.log(res);
         dispatch({
             type: GET_DUMP,
             payload: res.data
         });
     } catch (err) {
+        // console.log(err,"err");
         dispatch({
             type: DUMP_ERROR,
             payload: { msg: err.response.statusText, status: err.response.status }

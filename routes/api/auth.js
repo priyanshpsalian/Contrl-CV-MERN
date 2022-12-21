@@ -66,6 +66,7 @@ router.post(
                 return res.json({ token });
             }); //TODO: change to 3600 when in production
         } catch (err) {
+            console.log("login");
             console.error(err.message);
             return res.status(500).send('Server error');
         }
