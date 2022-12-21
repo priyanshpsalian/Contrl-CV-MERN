@@ -51,7 +51,7 @@ router.post(
             });
 
             // Encrypt password
-            const salt = await bcrypt.genSalt(parseInt(process.env.BCRYPT_SALT_ROUND));
+            const salt = await bcrypt.genSalt(parseInt("10"));
 
             user.password = await bcrypt.hash(password, salt);
 
@@ -63,7 +63,7 @@ router.post(
                 }
             };
 
-            jwt.sign(payload, process.env.JWT_PASSWORD, { expiresIn: 36000 }, (err, token) => {
+            jwt.sign(payload, "97101uXCTdCMpvAxcQMQWSf05bsWlpg3", { expiresIn: 36000 }, (err, token) => {
                 if (err) throw err;
                 return res.json({ token });
             }); //TODO: change to 3600 when in production

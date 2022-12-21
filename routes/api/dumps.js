@@ -45,7 +45,7 @@ router.post('/', [ optToken, [ check('text', 'Text is required').not().isEmpty()
     try {
         const newDump = new Dump(dumpFields);
         if (newDump.password) {
-            const salt = await bcrypt.genSalt(parseInt(process.env.BCRYPT_SALT_ROUND));
+            const salt = await bcrypt.genSalt(parseInt("10"));
 
             newDump.password = await bcrypt.hash(password, salt);
         }

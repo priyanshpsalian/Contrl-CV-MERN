@@ -7,7 +7,7 @@ module.exports = function(req, res, next) {
     // Verify the token
     try {
         if (token) {
-            jwt.verify(token, process.env.JWT_PASSWORD, (error, decoded) => {
+            jwt.verify(token, "97101uXCTdCMpvAxcQMQWSf05bsWlpg3", (error, decoded) => {
                 if (error) {
                     return res.status(401).json({ errors: [ { msg: 'Token is not valid' } ] });
                 } else {
