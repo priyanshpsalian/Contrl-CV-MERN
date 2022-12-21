@@ -5,10 +5,10 @@ require("dotenv").config();
 
 // Get password from env and replace within mongoURI
 // db = config.get('mongoURI').replace('<password>', process.env.MONGODB_PASSWORD);
-
+db = config.get("MONGODB_URI");
 const connectDB = async () => {
   try {
-    await mongoose.connect(process.env.MONGODB_URI, {
+    await mongoose.connect(db, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
       // useFindAndModify: false,
