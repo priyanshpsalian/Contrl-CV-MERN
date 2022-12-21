@@ -1,0 +1,35 @@
+{
+    "name": "paste-library",
+    "version": "1.0.0",
+    "description": "an utility that will allow user to paste their text and access them from any device using just an url.",
+    "main": "server.js",
+    "scripts": {
+        "start": "node server",
+        "server": "nodemon server",
+        "client": "npm start --prefix client",
+        "dev": "concurrently \"npm run server\" \"npm run client\"",
+        "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+    },
+    "repository": {
+        "type": "git",
+        "url": "paste-library-mern"
+    },
+    "author": "Priyansh Salian",
+    "license": "MIT",
+    "dependencies": {
+        "bcrypt": "^5.0.1",
+        "config": "^3.3.1",
+        "dotenv": "^8.2.0",
+        "express": "^4.17.1",
+        "express-validator": "^6.14.0",
+        "gravatar": "^1.8.2",
+        "jsonwebtoken": "^8.5.1",
+        "mongoose": "^6.2.5",
+        "nanoid": "^3.3.1",
+        "request": "^2.88.2"
+    },
+    "devDependencies": {
+        "concurrently": "^7.0.0",
+        "nodemon": "^2.0.3"
+    }
+}
