@@ -64,7 +64,7 @@ export const getDump = (slug) => async (dispatch) => {
         const res = await axios.get(
           `/api/${slug}`
         );
-        // console.log(res);
+        console.log(res.data,"res");
         dispatch({
             type: GET_DUMP,
             payload: res.data

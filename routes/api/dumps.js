@@ -102,7 +102,7 @@ router.get('/:slug', optToken, async (req, res) => {
             // dump.toObject();
             // TODO logic remaining for password in dump
         }
-
+        console.log(dump);
         return res.json(dump);
     } catch (err) {
         

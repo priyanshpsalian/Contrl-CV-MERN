@@ -12,6 +12,8 @@ import './Dump.css';
 import DeleteModal from './DeleteModal';
 
 class Dump extends Component {
+    
+    
     static propTypes = {
         getDump: PropTypes.func.isRequired,
         dump: PropTypes.object.isRequired,
@@ -20,10 +22,12 @@ class Dump extends Component {
 
     componentDidMount() {
         this.props.getDump(this.props.match.params.slug);
+        
     }
-
+    
     render() {
         const { dump, loading, error: { status: error_status } } = this.props.dump;
+        console.log(dump,"dump");
         const { isAuthenticated, isLoading, user } = this.props.auth;
 
         if (error_status === 404) {
